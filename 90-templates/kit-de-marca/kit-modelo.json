@@ -1,0 +1,230 @@
+{
+  "_leia": "Modelo preenchido com um kit de exemplo (Empresa Exemplo, 18/10/2026). Troque tudo pelos dados da conta. Obrigatórios: os nove tokens de cor (--noite --carvao --borda --pedra --osso --papel --tinta --luz --halo), a combinação A, ao menos uma peça com _procedencia. 'fundo': 'claro' põe todo tipo no fundo claro; sem ele, o escuro é o padrão. Tipos do motor: N1 N2 N3 P1 P2 B1 C1 D1 F1 (F1 pede 'foto', relativa a este arquivo).",
+  "conta": "Empresa Exemplo",
+  "titulo_italico": "kit de marca",
+  "assinatura": "@empresaexemplo",
+  "data": "18/10/2026",
+  "estado": "🟡 hipótese forte, n=0 · leitura da {{EMPRESA}}, aguardando a escolha da cliente na prancha (paleta e tipografia) · foto ainda sem aprovação dela",
+  "fundo": "claro",
+  "frase_amostra": "A clareza é o primeiro passo.",
+  "arquetipos": [
+    {
+      "papel": "dominante",
+      "nome": "Sábio (o espelho)",
+      "leitura": "faz o público ver como o outro funciona, pelo jeito dele e não pelo nosso. O método é lente e espelho, nunca caixa."
+    },
+    {
+      "papel": "da escrita",
+      "nome": "Cuidador",
+      "leitura": "convida, não impõe: caminhar junto, menos atrito e menos sofrimento, bem-estar gera resultado."
+    },
+    {
+      "papel": "da borda",
+      "nome": "Fora-da-lei",
+      "leitura": "contra a liderança que controla e manda, contra o resultado que adoece quem o entrega, contra a maioria dos testes do mercado."
+    },
+    {
+      "papel": "sombra",
+      "nome": "Sábio que rotula",
+      "leitura": "a categoria como caixa: o método dado como rótulo aumenta o julgamento. O kit nunca põe o rótulo no centro."
+    }
+  ],
+  "teste_da_peca": "a peça faz o público ver como o outro funciona por dentro, sem pôr ninguém numa caixa?",
+  "direcao": {
+    "sensacao": "entendimento que acalma. Uma só.",
+    "extremo": "caderno de campo: papel terroso, tinta, um verde só, e a lente desenhada à mão em traço fino.",
+    "memoravel": "a lente: um traço verde à mão que circula ou grifa o que estava por dentro. É o mesmo gesto em toda peça."
+  },
+  "regra_cor": "Fundo claro e terroso sempre; escuro só na oferta (a régua da página de oferta). O verde aparece em um lugar por peça: a palavra que vira, o traço da lente, ou o caminho. Nunca dourado chapado.",
+  "cores": [
+    {
+      "token": "--papel",
+      "hex": "#F6F1EA",
+      "nome": "papel",
+      "uso": "fundo dominante (o do site da cliente)"
+    },
+    {
+      "token": "--papel-2",
+      "hex": "#EDE4D7",
+      "nome": "areia",
+      "uso": "cartão no claro"
+    },
+    {
+      "token": "--borda-claro",
+      "hex": "#E0D4C4",
+      "nome": "fio",
+      "uso": "divisória no claro"
+    },
+    {
+      "token": "--tinta",
+      "hex": "#2E2924",
+      "nome": "tinta",
+      "uso": "texto"
+    },
+    {
+      "token": "--pedra",
+      "hex": "#6F6459",
+      "nome": "terra",
+      "uso": "rótulo, texto secundário"
+    },
+    {
+      "token": "--luz",
+      "hex": "#3F6B57",
+      "nome": "musgo",
+      "uso": "o acento: a palavra que vira, a lente"
+    },
+    {
+      "token": "--halo",
+      "hex": "#7F9C78",
+      "nome": "sálvia",
+      "uso": "brilho do acento, nunca texto"
+    },
+    {
+      "token": "--noite",
+      "hex": "#1E3A2F",
+      "nome": "floresta",
+      "uso": "fundo escuro, só na oferta"
+    },
+    {
+      "token": "--carvao",
+      "hex": "#2F5245",
+      "nome": "musgo escuro",
+      "uso": "cartão no escuro"
+    },
+    {
+      "token": "--borda",
+      "hex": "#3D5E50",
+      "nome": "fio no escuro",
+      "uso": "divisória no escuro"
+    },
+    {
+      "token": "--osso",
+      "hex": "#F6F1EA",
+      "nome": "papel",
+      "uso": "texto no escuro"
+    }
+  ],
+  "paletas": {
+    "musgo": {
+      "legenda": "musgo sobre papel (o site da cliente, continuidade)",
+      "cores": {}
+    },
+    "argila": {
+      "legenda": "argila no lugar do musgo (a outra cor do site da cliente)",
+      "cores": {
+        "--luz": "#A86B52",
+        "--halo": "#C99A84"
+      }
+    },
+    "petroleo": {
+      "legenda": "tinta petróleo e acento verde-água (o design system anterior)",
+      "cores": {
+        "--tinta": "#2E3D45",
+        "--luz": "#4F8278",
+        "--halo": "#8FB3AA"
+      }
+    }
+  },
+  "fontes_url": "https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,600;1,9..144,400;1,9..144,600&family=Newsreader:ital,opsz,wght@0,6..72,400;1,6..72,400&family=Hanken+Grotesk:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&family=Figtree:wght@700;800&display=block",
+  "combos": {
+    "A": {
+      "legenda": "Fraunces com o itálico da cliente + Hanken Grotesk (continuidade, sem a Inter)",
+      "--f-display": "'Fraunces',serif",
+      "--f-mono": "'Hanken Grotesk',sans-serif",
+      "--f-corpo": "'Hanken Grotesk',sans-serif",
+      "--f-nativa": "'Figtree',sans-serif",
+      "--t": "100px",
+      "--t-track": "-0.002em"
+    },
+    "B": {
+      "legenda": "Newsreader + IBM Plex Mono no rótulo (mais Sábio: o mapa à vista)",
+      "--f-display": "'Newsreader',serif",
+      "--f-mono": "'IBM Plex Mono',monospace",
+      "--f-corpo": "'Hanken Grotesk',sans-serif",
+      "--t": "104px",
+      "--t-track": "-0.002em"
+    }
+  },
+  "prancha": {
+    "peca_teste": "ex-P1-custar"
+  },
+  "tipos": [
+    {
+      "codigo": "P1",
+      "nome": "Página de caderno",
+      "quando": "a promessa ou uma frase da expert, com o grifo verde"
+    },
+    {
+      "codigo": "N1",
+      "nome": "Por dentro",
+      "quando": "o que o líder vê à esquerda, o caminho da confiança à direita"
+    },
+    {
+      "codigo": "D1",
+      "nome": "O norte",
+      "quando": "uma pergunta do teste, com a lente marcando a resposta"
+    },
+    {
+      "codigo": "C1",
+      "nome": "Carrossel",
+      "quando": "a narrativa central, em partes"
+    },
+    {
+      "codigo": "F1",
+      "nome": "Retrato",
+      "quando": "o rosto da expert com uma frase dela (foto ainda a aprovar)"
+    },
+    {
+      "codigo": "P2",
+      "nome": "Tela lisa",
+      "quando": "uma fala da expert em fonte nativa, sem arte"
+    }
+  ],
+  "gravacao": "Luz de janela lateral, planta ao fundo e parede clara, como na foto escolhida; blusa escura ou terrosa; caderno de papel e caneta quando for explicar. Nunca ring light frontal, nunca fundo escuro de estúdio. Som: ambiente limpo, sem trilha motivacional.",
+  "veto": [
+    "infantil e 'florzinha'",
+    "fundo escuro fora da oferta, neon, vidro, pílula, ícone por item, aspas gigantes",
+    "dourado chapado ou metálico",
+    "o rótulo da categoria como título no centro da peça ('você é tipo X'): o método é lente, nunca caixa",
+    "estética de outro nicho que a cliente recusa (preencher com os itens que ela citar)",
+    "símbolo ou estética que contradiz a promessa na porta de entrada: só como selo discreto; o símbolo pleno fica na oferta mais alta",
+    "foto de banco de 'líder de terno apontando', gráfico de performance",
+    "travessão no texto da peça (regra da voz da cliente)",
+    "léxico morto: '<palavra 1>', '<palavra 2>' (as que a cliente recusa)",
+    "Inter (veto da casa; se o site atual da cliente usa, troca na próxima revisão)"
+  ],
+  "pecas": [
+    {
+      "id": "ex-P1-custar",
+      "tipo": "P1",
+      "formato": "feed",
+      "combo": "A",
+      "_procedencia": "promessa (PILARES.md l.<n>: '<promessa dos pilares>') · corpo: fala da expert, '<fala literal>' (DESTILACAO-CALL-<data>.md l.<n> [hh:mm:ss]) · lei: 'pista/lente, nunca caixa' (skill de voz da expert, l.<n>)",
+      "rotulo": "Método Exemplo para Líderes",
+      "titulo_a": "O problema pode continuar ali,",
+      "grifo": "e deixar de te custar.",
+      "titulo_b": "",
+      "corpo": "Entenda como as pessoas funcionam, como você funciona, e tenha resultado com menos atrito.",
+      "lei": "o método é lente, nunca caixa."
+    },
+    {
+      "id": "ex-D1-entrega",
+      "tipo": "D1",
+      "formato": "feed",
+      "combo": "A",
+      "_procedencia": "cena do público: '<fala literal do banco>' (lexico-icp/BANCO.md XX-LEX-04, D) · opções: estrutura nossa · 'um norte' é a promessa do quiz (CLAUDE.md da conta l.<n>)",
+      "rotulo": "Teste · o seu norte",
+      "titulo_a": "Chegou o dia e não deu certo.",
+      "titulo_b": "O que você pensa?",
+      "vira_luz": false,
+      "opcoes": [
+        "a outra pessoa não liga para o que eu falo",
+        "eu não expliquei direito",
+        "ainda não sei como a pessoa funciona"
+      ],
+      "marcada": 2,
+      "anotacao": "→ é aqui que o norte começa",
+      "lei": "um norte, não um rótulo."
+    }
+  ]
+}

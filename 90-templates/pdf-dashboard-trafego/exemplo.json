@@ -1,0 +1,19 @@
+{
+  "arquivo": "RESULTADO-TESTE-01-2026-10-19-a-25",
+  "chips": ["<b>Empresa Exemplo</b> · Produto Exemplo", "Meta Ads · Instagram → WhatsApp", "<b>19 a 25/10/2026</b> · encerrado"],
+  "periodo": "19 a 25/10",
+  "verba": 200,
+  "campanhas": [
+    {"nome": "Campanha 1", "detalhe": "19 a 21/10 · pausada em 21/10", "gasto": 47.75, "conversas": 14, "impressoes": 1549, "alcance": 1247, "visitas": 13, "seguidores": null},
+    {"nome": "Campanha 2", "detalhe": "22 a 25/10 · Feed, Stories e Reels", "gasto": 150.56, "conversas": 24, "impressoes": 7680, "alcance": 5583, "visitas": 34, "seguidores": 7}
+  ],
+  "serie": [
+    {"data": "20/10", "gasto": 39.79, "conversas": 13},
+    {"data": "21/10", "gasto": 47.75, "conversas": 14},
+    {"data": "22/10", "gasto": 84.48, "conversas": 15},
+    {"data": "23/10", "gasto": 112.87, "conversas": 19},
+    {"data": "24/10", "gasto": 154.28, "conversas": 28},
+    {"data": "25/10", "gasto": 198.31, "conversas": 38}
+  ],
+  "nota": "Fonte: Gerenciador de Anúncios, conta de anúncios exemplo, lido em 27/10/2026. Gráficos: leituras acumuladas do painel de resultado (20 a 24/10) e fechamento (25/10). 21/10 sem veiculação. Alcance total = soma das duas campanhas (pode haver pessoa contada nas duas)."
+}
