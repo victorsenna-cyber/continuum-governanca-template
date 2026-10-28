@@ -6,7 +6,7 @@ sincronizar.py — CLAUDE.md §11.6, mecanizado.
 Uma operação, igual no local (Windows) e na nuvem (sessão web, branch claude/...):
   1. commita tudo o que mudou na pasta (git add -A)
   2. traz a main do GitHub e mescla no ponto atual (merge, nunca rebase)
-  3. regenera o AGENTS.md pelo procedimento (§0 do atual + CLAUDE.md vigente)
+  3. regenera o AGENTS.md (cabeçalho do atual + corpo do CLAUDE.md vigente): réplica do kernel para quem lê AGENTS.md
   4. publica: HEAD → main  (e HEAD → a própria branch, se não for a main)
 
 Conflitos:
@@ -44,7 +44,7 @@ def regenerar_agents():
     i, j = a.find("## 1. PAPEL"), c.find("## 1. PAPEL")
     if i < 0 or j < 0:
         return False
-    novo = a[:i] + c[j:]
+    novo = a[:i] + c[j:].replace("este `CLAUDE.md`", "este `AGENTS.md`")  # AGENTS.md é réplica do kernel; só a autorreferência muda
     if novo != io.open(pa, encoding="utf-8").read():
         io.open(pa, "w", encoding="utf-8", newline="").write(novo)
         return True

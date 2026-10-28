@@ -37,6 +37,16 @@ Rode `py 40-operacao-rotinas/ferramentas/instanciar-template.py --listar` para v
 
 **Regra:** placeholder que você não sabe preencher vira `a calibrar`, nunca palpite. Campo inventado contamina toda peça produzida depois.
 
+## 2-bis. Qual kernel a sua ferramenta lê
+
+| Ferramenta | Lê | O que fazer |
+|---|---|---|
+| Claude Code | `CLAUDE.md` | nada; `AGENTS.md` é réplica mantida pelo `sincronizar.py` |
+| Codex, GPT e outras que leem `AGENTS.md` | `AGENTS.md` | nada; é o mesmo kernel com outro nome — o Codex opera como agente principal (CEO) |
+| Dois agentes (um principal, um executor na antessala) | principal: `CLAUDE.md` ou `AGENTS.md` · executor: `AGENTS-EXEC.md` | renomear `AGENTS-EXEC.md` para o nome que o executor lê, se for o caso |
+
+O roteiro de entrevista para popular o repositório com o contexto da empresa está no `README.md`.
+
 ## 3. O dia 1, em ordem
 
 1. **`CLAUDE.md` §1** — confirme a realidade operacional (uma pessoa, 100%). Se tiver sócio ou equipe, corrija aqui, em `STATUS.md` §4 e em `POLITICAS` §1 **no mesmo ato** — e nada vale sem instrumento escrito (`80-juridico/POLITICAS-JURIDICAS.md` §1).
