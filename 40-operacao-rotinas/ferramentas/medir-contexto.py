@@ -7,8 +7,8 @@ a memória do Claude Code) e o que cada árvore e o STATUS.md custam quando carr
 mais as descrições das skills e agentes locais (.claude/skills, .claude/agents), que
 entram em toda sessão. Conversão: 1 token ≈ 3,5 caracteres (português).
 
-  py medir-contexto.py              → imprime e grava 40-operacao-rotinas/tokens/CARGA-FIXA.md
-  py medir-contexto.py --teto 60000 → marca ✅/🔴 contra um teto em tokens
+  python3 medir-contexto.py              → imprime e grava 40-operacao-rotinas/tokens/CARGA-FIXA.md
+  python3 medir-contexto.py --teto 60000 → marca ✅/🔴 contra um teto em tokens
 """
 import argparse, datetime, glob, io, os, re, sys
 

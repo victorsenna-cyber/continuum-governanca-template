@@ -67,17 +67,17 @@ Campos de cada conversa: `chatId` · `relacao` (cliente, parceiro ou prospect) �
 
 | Comando | O que faz |
 |---|---|
-| `py rodada.py --espaco 30` | **a rotina**: uma conversa por vez, cada uma num processo `capturar.py --chat` próprio, 30 s entre elas; para em 2 falhas seguidas; relatório em `tarefas/log/CAPTURA-*.md`; `--max N`, `--so "<Pasta>"`, `--lista <json>`, `--dry-run`. É o que a task diária de captura roda (`tarefas/README.md`). |
-| `py capturar.py` | captura **só o que é novo** nas conversas do mapa e transcreve (é o que o botão roda). Conversa sem atividade depois do cursor não é lida; as outras, no máximo as últimas 50 mensagens |
-| `py capturar.py --chat <chatId>` | só uma conversa (é o que os scripts de `por-conversa/` rodam) |
-| `py capturar.py --chat <chatId> --historico` | histórico fundo (até 2.000 mensagens) **de uma conversa só**. Nunca sem `--chat` |
-| `py capturar.py --help` | mostra o uso e não lê nada. Argumento desconhecido também não lê nada |
-| `py capturar.py --so "<Pasta>"` | só as conversas de uma pasta |
-| `py capturar.py --mapa` | só lê as etiquetas e atualiza o mapa, as pastas, os scripts e a chave do MCP |
-| `py capturar.py --listar` | conversas da sessão, com id, tipo e última atividade |
-| `py capturar.py --estrutura` | só cria a estrutura `OpenWA/` em todos os clientes |
-| `py capturar.py --desde AAAA-MM-DD` | na 1ª captura de uma conversa, não volta antes dessa data. ⚠️ O que ficar antes não é capturado depois |
-| `py capturar.py --sem-transcrever` | baixa os áudios e deixa a transcrição para a próxima rodada |
+| `python3 rodada.py --espaco 30` | **a rotina**: uma conversa por vez, cada uma num processo `capturar.py --chat` próprio, 30 s entre elas; para em 2 falhas seguidas; relatório em `tarefas/log/CAPTURA-*.md`; `--max N`, `--so "<Pasta>"`, `--lista <json>`, `--dry-run`. É o que a task diária de captura roda (`tarefas/README.md`). |
+| `python3 capturar.py` | captura **só o que é novo** nas conversas do mapa e transcreve (é o que o botão roda). Conversa sem atividade depois do cursor não é lida; as outras, no máximo as últimas 50 mensagens |
+| `python3 capturar.py --chat <chatId>` | só uma conversa (é o que os scripts de `por-conversa/` rodam) |
+| `python3 capturar.py --chat <chatId> --historico` | histórico fundo (até 2.000 mensagens) **de uma conversa só**. Nunca sem `--chat` |
+| `python3 capturar.py --help` | mostra o uso e não lê nada. Argumento desconhecido também não lê nada |
+| `python3 capturar.py --so "<Pasta>"` | só as conversas de uma pasta |
+| `python3 capturar.py --mapa` | só lê as etiquetas e atualiza o mapa, as pastas, os scripts e a chave do MCP |
+| `python3 capturar.py --listar` | conversas da sessão, com id, tipo e última atividade |
+| `python3 capturar.py --estrutura` | só cria a estrutura `OpenWA/` em todos os clientes |
+| `python3 capturar.py --desde AAAA-MM-DD` | na 1ª captura de uma conversa, não volta antes dessa data. ⚠️ O que ficar antes não é capturado depois |
+| `python3 capturar.py --sem-transcrever` | baixa os áudios e deixa a transcrição para a próxima rodada |
 
 ## Motor e chaves
 
@@ -94,7 +94,7 @@ Campos de cada conversa: `chatId` · `relacao` (cliente, parceiro ou prospect) �
 Regra: não se captura tudo de todas as mensagens a cada rodada. O script lê só o que é novo.
 
 **O caso que instituiu a regra:**
-- O Claude rodou `py capturar.py --help` para ver as opções. O script não conhecia `--help`, ignorou o argumento e fez uma **rodada completa**: todas as conversas do mapa.
+- O Claude rodou `python3 capturar.py --help` para ver as opções. O script não conhecia `--help`, ignorou o argumento e fez uma **rodada completa**: todas as conversas do mapa.
 - Cerca de dez delas nunca tinham sido capturadas, algumas com mais de mil mensagens. Cada uma foi lida com `deep=true` até 2.000 mensagens, e a mídia baixada em janelas crescentes (20, 40… 100), que rebaixavam os mesmos arquivos.
 - **O volume de leitura interrompeu a conexão do WhatsApp, e o {{OPERADOR}} teve que abrir o WhatsApp no celular para restabelecê-la.** Um dos grupos registrou `download ao vivo falhou (TimeoutError)`.
 - **Erro do Claude:** rodar um script de rede com argumento que ele não sabia se existia. Um `--help` em script sem `argparse` é um comando executado, não uma consulta. Antes de rodar, lê-se o cabeçalho do script.

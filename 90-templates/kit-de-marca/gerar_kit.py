@@ -4,7 +4,7 @@
 gerar_kit.py — monta o kit de marca de uma conta a partir de um kit.json.
 
 Tipo: blueprint (ferramenta) · Método: 100-métodos/METODO-KIT-DE-MARCA.md
-Uso:  py gerar_kit.py <pasta-da-conta>/branding/01 - identidade visual/kit.json [--sem-png]
+Uso:  python3 gerar_kit.py <pasta-da-conta>/branding/01 - identidade visual/kit.json [--sem-png]
 
 Gera, na pasta do kit.json:
   tokens.css         cor e fonte da conta (gerado: mude o kit.json, nunca este arquivo)

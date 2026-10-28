@@ -1,13 +1,16 @@
 """Dashboard fixo de resultado de tráfego em PDF (A4 deitado, uma página), no visual do painel de resultado.
 
-Uso:  py gerar_dashboard.py <dados.json>
+Uso:  python3 gerar_dashboard.py <dados.json>
 Gera <nome>.html e <nome>.pdf na pasta do JSON (ou em "saida", se o JSON disser). Molde dos dados: exemplo.json.
 """
 import base64, json, pathlib, subprocess, sys
 
 AQUI = pathlib.Path(__file__).resolve().parent
 GOV = AQUI.parents[1]
-CHROME = r"C:\Program Files\Google\Chrome\Application\chrome.exe"
+import sys as _sys, os as _os
+_sys.path.insert(0, _os.path.join(_os.path.dirname(_os.path.dirname(_os.path.dirname(_os.path.abspath(__file__)))), '40-operacao-rotinas', 'ferramentas'))
+from navegador import chrome_path  # noqa: E402  Chrome em Windows, macOS e Linux (ou CHROME=<caminho>)
+CHROME = chrome_path()
 LOGO = GOV / "40-operacao-rotinas/ferramentas/painel-resultado/logo-continuum.png"
 
 

@@ -4,11 +4,11 @@
 instanciar-template.py — preenche os placeholders {{…}} do template Continuum.
 
 Uso:
-  py 40-operacao-rotinas/ferramentas/instanciar-template.py --listar
+  python3 40-operacao-rotinas/ferramentas/instanciar-template.py --listar
       lista cada placeholder com quantidade de ocorrências e os arquivos (caminho:linha)
-  py 40-operacao-rotinas/ferramentas/instanciar-template.py --definir EMPRESA="Minha Empresa" OPERADOR="Nome"
+  python3 40-operacao-rotinas/ferramentas/instanciar-template.py --definir EMPRESA="Minha Empresa" OPERADOR="Nome"
       substitui em todo o repositório (texto: .md .py .json .yml .html .css .js .txt .bat .sql)
-  py 40-operacao-rotinas/ferramentas/instanciar-template.py --arquivo valores.json
+  python3 40-operacao-rotinas/ferramentas/instanciar-template.py --arquivo valores.json
       lê um JSON {"EMPRESA": "...", "OPERADOR": "..."} e substitui
   --dry-run   mostra o que mudaria, sem gravar
 

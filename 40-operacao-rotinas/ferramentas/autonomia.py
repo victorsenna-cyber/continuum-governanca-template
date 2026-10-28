@@ -16,9 +16,9 @@ Regras (fixas até o {{OPERADOR}} mudar):
   Teto proposto: dinheiro, contrato e mensagem a cliente começam em A1 e só sobem com
   "aprovado" literal, tipo a tipo (lista TETO abaixo).
 
-  py autonomia.py                 → tabela por tipo
-  py autonomia.py --tipo X        → nível de um tipo (imprime A0..A3)
-  py autonomia.py --registrar D-001 tipo A B [--veto]
+  python3 autonomia.py                 → tabela por tipo
+  python3 autonomia.py --tipo X        → nível de um tipo (imprime A0..A3)
+  python3 autonomia.py --registrar D-001 tipo A B [--veto]
 """
 import argparse, datetime, io, json, os, sys
 from collections import defaultdict

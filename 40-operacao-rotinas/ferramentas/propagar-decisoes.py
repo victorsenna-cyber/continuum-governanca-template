@@ -13,7 +13,7 @@ sessão do Claude (ferramenta ArtifactData, `list` da coleção) e salva o JSON 
      40-operacao-rotinas/tarefas/log/DECISOES-CASA.md quando conta = casa.
   3. Registra o par recomendação × escolha em DECISOES.jsonl (autonomia.py).
 
-  py propagar-decisoes.py [--json caminho] [--dry-run]
+  python3 propagar-decisoes.py [--json caminho] [--dry-run]
 """
 import argparse, datetime, io, json, os, re, subprocess, sys
 

@@ -3,11 +3,14 @@
 despachar.py — despachante das tasks (N0, sem LLM). Lê tarefas/fila/, confere orçamento,
 janela e dependências, e lança um worker por task no nível mais barato permitido.
 
-  py despachar.py --dry-run          lista e ordena, mostra orçamento, não executa
-  py despachar.py                    uma rodada (até --max tasks, padrão 3)
-  py despachar.py --so N0,N2         só esses níveis
-  py despachar.py --task T-...-001   força uma task (ignora prioridade, respeita orçamento)
-  py despachar.py --sem-sync         não roda sincronizar.py no fim
+  python3 despachar.py --dry-run          lista e ordena, mostra orçamento, não executa
+  python3 despachar.py                    uma rodada (até --max tasks, padrão 3)
+  python3 despachar.py --so N0,N2         só esses níveis
+  python3 despachar.py --task T-...-001   força uma task (ignora prioridade, respeita orçamento)
+  python3 despachar.py --sem-sync         não roda sincronizar.py no fim
+
+WORKER_CLI=<comando> troca o `claude -p` por outro agente (prompt pelo stdin; {modelo} e {nivel} são substituídos).
+Agendamento: Windows = Agendador de Tarefas · macOS = LaunchAgent (ferramentas/macos/instalar-mac.sh) · Linux = cron.
 
 Estado = pasta (fila → executando → revisao|entregue|falhou|decisao). Trava: tarefas/.lock.
 PAUSA em tarefas/ para tudo. Três falhas seguidas param a rodada.
@@ -23,7 +26,7 @@ TZ = datetime.timezone(datetime.timedelta(hours=-3))
 MODELO = {"N2": "claude-haiku-5-5", "N3": "claude-sonnet-5-5", "N4": "claude-opus-5-5", "N5": "claude-fable-5-1"}
 NIVEIS = ["N0", "N1", "N2", "N3", "N4", "N5"]
 LLM = ("N2", "N3", "N4", "N5")  # níveis que consomem o plano
-TOOLS_PADRAO = "Read,Grep,Glob,Edit,Write,Bash(py *),Bash(python *),Bash(curl *),Bash(ls *),Bash(git status*),Bash(git diff*),Bash(git log*)"
+TOOLS_PADRAO = "Read,Grep,Glob,Edit,Write,Bash(py *),Bash(python *),Bash(python3 *),Bash(curl *),Bash(ls *),Bash(git status*),Bash(git diff*),Bash(git log*)"
 
 
 def agora():
@@ -250,7 +253,12 @@ def worker_ruflo(t):
 def worker_claude(t, nivel):
     prompt = montar_prompt(t, nivel)
     tools = t.get("tools", TOOLS_PADRAO)
-    cmd = ["claude", "-p", "--model", MODELO[nivel], "--output-format", "json", "--allowedTools", tools, "--max-turns", t.get("max_turns", "40")]
+    cli = os.environ.get("WORKER_CLI")  # outro agente no lugar do Claude Code, ex.: 'codex exec --model {modelo} -' (prompt pelo stdin)
+    if cli:
+        import shlex
+        cmd = shlex.split(cli.format(modelo=MODELO[nivel], nivel=nivel))
+    else:
+        cmd = ["claude", "-p", "--model", MODELO[nivel], "--output-format", "json", "--allowedTools", tools, "--max-turns", t.get("max_turns", "40")]
     try:
         r = subprocess.run(cmd, input=prompt, cwd=RAIZ, capture_output=True, text=True, encoding="utf-8", errors="replace", timeout=3600, shell=(os.name == "nt"))
     except subprocess.TimeoutExpired:

@@ -1,7 +1,7 @@
 """puxar-midia-pontual.py — baixa, de UMA conversa, as mídias de hoje (ou desde --desde), para uma pasta dada.
 Só leitura. Lê no máximo 30 mensagens da conversa. Não mexe no mapa nem nos cursores do capturar.py.
 
-Uso: py puxar-midia-pontual.py --conversa "Lista" --para "<pasta destino>" [--desde AAAA-MM-DD] [--limite 30]
+Uso: python3 puxar-midia-pontual.py --conversa "Lista" --para "<pasta destino>" [--desde AAAA-MM-DD] [--limite 30]
 """
 import os, sys, io, json
 from datetime import datetime, timezone, timedelta

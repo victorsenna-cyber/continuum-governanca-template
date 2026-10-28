@@ -1,7 +1,7 @@
 """Exporta a transcrição de uma sessão do Claude Code (.jsonl) para Markdown legível.
 
 Uso:
-    py 40-operacao-rotinas/ferramentas/exportar-sessao.py <sessao.jsonl> <saida.md>
+    python3 40-operacao-rotinas/ferramentas/exportar-sessao.py <sessao.jsonl> <saida.md>
 
 Mantém: falas do usuário, texto do assistente, resumos de compactação e o nome/descrição de cada ferramenta usada.
 Descarta: resultados de ferramenta, raciocínio interno, lembretes do sistema e imagens.

@@ -25,7 +25,7 @@ Ferramentas, todas locais: ffmpeg (decodifica para WAV 16 kHz mono) +
 faster-whisper (CTranslate2, CPU int8). Nada sai da máquina.
 
 Uso (a partir da raiz da Governança):
-  py 40-operacao-rotinas/ferramentas/transcrever-audio.py --pasta <pasta>
+  python3 40-operacao-rotinas/ferramentas/transcrever-audio.py --pasta <pasta>
         lê o README da pasta e transcreve só os áudios MAIS NOVOS que o último
         transcrito; depois atualiza o README
   ... --pasta <pasta> --lacunas      idem, e também os áudios antigos sem .md
@@ -192,7 +192,7 @@ def bloco_readme(pasta, eol):
         "",
         "**Para transcrever o que chegou** (a partir da raiz da Governança) — transcreve só o que é mais novo que o último áudio acima, com modelo local, e atualiza este bloco:",
         "",
-        f'`py 40-operacao-rotinas/ferramentas/transcrever-audio.py --pasta "{rel(pasta)}"`',
+        f'`python3 40-operacao-rotinas/ferramentas/transcrever-audio.py --pasta "{rel(pasta)}"`',
         "",
     ]
     fora = {}

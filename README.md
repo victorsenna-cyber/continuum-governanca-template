@@ -25,7 +25,7 @@ Centro de comando da {{EMPRESA}}. Esta pasta governa cultura, estratégia, táti
 | `100-métodos/` | Os artefatos de conhecimento, tipados: frameworks, trilhos, métodos, políticas, gates. |
 | `20-projeto-escopo/` | Detalhamento por dimensão (fonte: `PROJECT.md`/`SCOPE.md`). |
 | `30-comercial/` | Só processo comercial da casa: ICP, oferta, produtos, serviços, onboarding, prospecção, swipe file, benchmark. Nada de cliente aqui. |
-| `40-operacao-rotinas/` | Rituais, gestão do tempo, operação por tasks, medição de tokens, rito de integração da antessala e as `ferramentas/`. |
+| `40-operacao-rotinas/` | Rituais, gestão do tempo, operação por tasks, medição de tokens, rito de integração da antessala e as `ferramentas/` (Windows, macOS e Linux; Mac começa em `ferramentas/macos/`). |
 | `45-financeiro/` | Lançamentos da empresa e extratos classificados (fonte do painel *Caixa*). |
 | `50-integracoes-dados/` | Estado dos sistemas (CRM, automações), escrito pelo sistema. |
 | `60-planos/` | Plano de 90 dias e metas vigentes. |
@@ -69,7 +69,7 @@ Centro de comando da {{EMPRESA}}. Esta pasta governa cultura, estratégia, táti
 - Nome da empresa e de quem detém a alçada. Há sócio? Qual a participação e **existe instrumento assinado**? Se não existe: registrar *"acordo verbal — não oponível"* e abrir pendência em `80-juridico/societario/`.
 - Quem executa, quantas pessoas, quantas horas de entrega por semana **cada uma** (de verdade, não de intenção; se não sabe, `a calibrar` e medir em duas semanas).
 - Que ferramenta de IA opera o repositório (Claude Code, Codex, outra) e quem é o **dono nomeado do registro** (nome, não cargo). Sem dono, o repo congela em 30 dias.
-- Rodar: `py 40-operacao-rotinas/ferramentas/instanciar-template.py --definir EMPRESA="…" OPERADOR="…"`.
+- Rodar: `python3 40-operacao-rotinas/ferramentas/instanciar-template.py --definir EMPRESA="…" OPERADOR="…"`.
 
 ### Bloco 1 — a empresa (20 min) → `PROJECT.md`, `SCOPE.md`, `00-core/CULTURA.md` §0 e §9
 
@@ -129,8 +129,8 @@ Para cada cliente ativo: criar a pasta pelo molde (`clientes/README.md`), rodar 
 ### Fechamento da entrevista
 
 - `STATUS.md` §1 a §6 preenchidos; §7 já vem pronto.
-- `py 40-operacao-rotinas/ferramentas/instanciar-template.py --listar` com zero placeholders obrigatórios (os de preço podem ficar `a calibrar`, escritos assim).
-- `py 40-operacao-rotinas/ferramentas/verificar-propagacao.py` em ✅.
+- `python3 40-operacao-rotinas/ferramentas/instanciar-template.py --listar` com zero placeholders obrigatórios (os de preço podem ficar `a calibrar`, escritos assim).
+- `python3 40-operacao-rotinas/ferramentas/verificar-propagacao.py` em ✅.
 - Uma entrada no topo do `STATUS.md`: *"repositório instanciado em DD/MM/AAAA; pendências de calibração: …"*.
 - **O primeiro pedido real roteado pelo `CLAUDE.md`/`AGENTS.md` §6** — e o que o repositório não soube responder vira a próxima pergunta. É assim que ele passa a ser da empresa.
 

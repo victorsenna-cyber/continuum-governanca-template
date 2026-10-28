@@ -7,11 +7,11 @@ Nada externo: não chama API, não lê o plano. O plano mostra % em `/usage`; o 
 tokens se calibra cruzando o % anotado com o que este script mede (T3 §5, F0).
 
 Uso:
-  py medir-tokens.py                 → últimos 14 dias, relatório em
+  python3 medir-tokens.py                 → últimos 14 dias, relatório em
                                        40-operacao-rotinas/tokens/SEMANA-<ano>-S<nn>.md
-  py medir-tokens.py --dias 30       → janela maior
-  py medir-tokens.py --so-tela       → imprime e não grava
-  py medir-tokens.py --calibrar 37   → anota o % do /usage de hoje e estima tokens por 1 %
+  python3 medir-tokens.py --dias 30       → janela maior
+  python3 medir-tokens.py --so-tela       → imprime e não grava
+  python3 medir-tokens.py --calibrar 37   → anota o % do /usage de hoje e estima tokens por 1 %
 
 O que separa: dia · modelo · projeto · sessão principal × subagente (isSidechain).
 Métrica extra: **carga fixa por sessão** = cache_creation da 1ª chamada de cada sessão,

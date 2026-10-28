@@ -65,7 +65,7 @@ O bloco fica entre `<!-- transcricao:inicio -->` e `<!-- transcricao:fim -->`. *
 
 1. **Abrir o `README.md` da pasta do áudio.** Ele diz o último transcrito, o que chegou depois e o que já está transcrito fora do lugar.
 2. **Rodar a ferramenta na pasta** (a partir da raiz da Governança):
-   `py 40-operacao-rotinas/ferramentas/transcrever-audio.py --pasta "<pasta>"`
+   `python3 40-operacao-rotinas/ferramentas/transcrever-audio.py --pasta "<pasta>"`
    Antes de transcrever, ela procura transcrição existente na conta inteira (mesmo nome, data e hora em qualquer formato no nome, trecho em arquivo `TRANSCRI…` consolidado). Achou arquivo → põe ao lado; achou trecho → avisa e não transcreve. Só o que não existe em lugar nenhum é transcrito. Depois atualiza o README.
    - só pôr ao lado o que já existe, sem transcrever nada: `… transcrever-audio.py --colocar "<pasta>"`
    - áudios específicos: `… transcrever-audio.py "<áudio>" ["<áudio>" …]`

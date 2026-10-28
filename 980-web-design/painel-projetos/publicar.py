@@ -7,8 +7,8 @@ painel financeiro (financeiro.{{DOMINIO}}/projetos/): mesmo login, mesma sessão
 Token da API da Hostinger em ~/.continuum/hostinger-token.txt (ou HOSTINGER_API_TOKEN), nunca no repo.
 Mesmo envio TUS do painel de resultado (40-operacao-rotinas/ferramentas/painel-resultado/servir.py).
 
-  py publicar.py            # envia index.html, config.js e .htaccess
-  py publicar.py --conferir # baixa cada arquivo publicado e compara byte a byte
+  python3 publicar.py            # envia index.html, config.js e .htaccess
+  python3 publicar.py --conferir # baixa cada arquivo publicado e compara byte a byte
 """
 import argparse, hashlib, io, json, os, sys, urllib.request
 from pathlib import Path

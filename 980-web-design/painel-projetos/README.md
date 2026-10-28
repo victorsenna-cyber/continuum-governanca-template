@@ -65,4 +65,4 @@ marcos:
 ## Rotina
 
 - Task N0 diária `painel-projetos-verificar` (antes do `brief-diario`): `painel-projetos.py --verificar --json 40-operacao-rotinas/rotinas/PAINEL-PROJETOS.json`. O brief lê esse JSON em vez de todas as entradas do `STATUS.md`.
-- Mudou `index.html`, `config.js` ou `.htaccess`: `py publicar.py` e depois `py publicar.py --conferir`.
+- Mudou `index.html`, `config.js` ou `.htaccess`: `python3 publicar.py` e depois `python3 publicar.py --conferir`.

@@ -3,7 +3,7 @@
 """
 gerar_prancha.py — monta a prancha de escolha (método: 100-métodos/METODO-PRANCHA-DE-ESCOLHA.md).
 
-Uso:  py gerar_prancha.py manifesto.json [--png]
+Uso:  python3 gerar_prancha.py manifesto.json [--png]
 Manifesto:
   {"titulo": "Prancha de", "titulo_italico": "teste", "subtitulo": "…",
    "saida": "prancha-teste.html",                       # relativo ao manifesto
@@ -14,7 +14,10 @@ Caminhos de imagem são relativos à página gerada.
 """
 import html, io, json, os, subprocess, sys, tempfile
 
-CHROME = r"C:\Program Files\Google\Chrome\Application\chrome.exe"
+import sys as _sys, os as _os
+_sys.path.insert(0, _os.path.join(_os.path.dirname(_os.path.dirname(_os.path.dirname(_os.path.abspath(__file__)))), '40-operacao-rotinas', 'ferramentas'))
+from navegador import chrome_path  # noqa: E402  Chrome em Windows, macOS e Linux (ou CHROME=<caminho>)
+CHROME = chrome_path()
 e = html.escape
 CSS = """:root{--noite:#0A0907;--carvao:#16130F;--borda:#2A251E;--pedra:#8A8378;--osso:#EFE9DD;--luz:#E9A23B}
 *{box-sizing:border-box}body{margin:0;background:var(--noite);color:var(--osso);font:15px/1.45 'Instrument Sans',sans-serif;padding:32px 16px 64px}

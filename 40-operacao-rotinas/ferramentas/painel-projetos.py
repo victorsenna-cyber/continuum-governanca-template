@@ -16,11 +16,11 @@ O painel é LEITOR, nunca fonte (mesma régua do financeiro). Este script só l�
 e publica UM documento JSON no Supabase (projeto continuum-finance, tabela projetos_estado), que o site lê.
 
 Uso:
-  py 40-operacao-rotinas/ferramentas/painel-projetos.py               # resumo na tela
-  py 40-operacao-rotinas/ferramentas/painel-projetos.py --json X.json # grava o payload (serve ao brief diário)
-  py 40-operacao-rotinas/ferramentas/painel-projetos.py --verificar   # lista contas com painel inválido ou
+  python3 40-operacao-rotinas/ferramentas/painel-projetos.py               # resumo na tela
+  python3 40-operacao-rotinas/ferramentas/painel-projetos.py --json X.json # grava o payload (serve ao brief diário)
+  python3 40-operacao-rotinas/ferramentas/painel-projetos.py --verificar   # lista contas com painel inválido ou
                                                                       # defasado; sai 1 se houver (gate N0)
-  py 40-operacao-rotinas/ferramentas/painel-projetos.py --publicar    # envia ao Supabase
+  python3 40-operacao-rotinas/ferramentas/painel-projetos.py --publicar    # envia ao Supabase
 
 --publicar lê do ambiente FINANCAS_SUPABASE_URL, FINANCAS_SUPABASE_KEY e FINANCAS_SYNC_TOKEN (os mesmos do
 financeiro). Sem eles avisa e sai 0 — menos no GitHub Action, onde sai 1.

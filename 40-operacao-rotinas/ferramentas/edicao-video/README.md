@@ -12,6 +12,13 @@ winget install Gyan.FFmpeg          # ffmpeg + ffprobe no PATH (reabrir o termin
 pip install faster-whisper          # transcrição com tempo por palavra
 ```
 
+**macOS / Linux** (bash):
+
+```bash
+brew install ffmpeg                 # Linux: sudo apt install ffmpeg
+python3 -m pip install faster-whisper numpy
+```
+
 Fonte da legenda: ver `fontes/LEIA.md` (Montserrat ExtraBold, um arquivo `.ttf`).
 
 Conferir: `ffmpeg -version` e `python -c "import faster_whisper"` sem erro.

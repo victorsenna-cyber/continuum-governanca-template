@@ -19,7 +19,7 @@
 
 ## 2. Placeholders
 
-Rode `py 40-operacao-rotinas/ferramentas/instanciar-template.py --listar` para ver todos os `{{…}}` com arquivo e linha, e `--definir CHAVE=valor` para substituir em todo o repositório. Os principais:
+Rode `python3 40-operacao-rotinas/ferramentas/instanciar-template.py --listar` para ver todos os `{{…}}` com arquivo e linha, e `--definir CHAVE=valor` para substituir em todo o repositório. Os principais:
 
 | Placeholder | O que é | Onde pesa |
 |---|---|---|
@@ -47,6 +47,8 @@ Rode `py 40-operacao-rotinas/ferramentas/instanciar-template.py --listar` para v
 
 O roteiro de entrevista para popular o repositório com o contexto da empresa está no `README.md`.
 
+**macOS ou Linux:** comece por `40-operacao-rotinas/ferramentas/macos/README.md` e rode `./40-operacao-rotinas/ferramentas/macos/instalar-mac.sh`. Toda a documentação usa `python3`; o que era só Windows (agendador, `.bat`, atalho, caminho do Chrome) tem equivalente lá.
+
 ## 3. O dia 1, em ordem
 
 1. **`CLAUDE.md` §1** — confirme a realidade operacional (uma pessoa, 100%). Se tiver sócio ou equipe, corrija aqui, em `STATUS.md` §4 e em `POLITICAS` §1 **no mesmo ato** — e nada vale sem instrumento escrito (`80-juridico/POLITICAS-JURIDICAS.md` §1).
@@ -58,7 +60,7 @@ O roteiro de entrevista para popular o repositório com o contexto da empresa es
 7. **`10-skills/voz-operador.skill.md`** — fica esqueleto até a primeira call destilada (eixo 13 de `METODO-DESTILACAO-DE-CALLS.md`). Não invente a própria voz.
 8. **`945-branding/01 - identidade visual/IDENTIDADE-VISUAL.md`** — quando houver marca decidida; antes disso, `ARQUETIPOS-DE-MARCA.md` + `METODO-KIT-DE-MARCA.md`.
 9. **Git:** `git init`, remoto privado, e `.claude/settings.json` já chama `sincronizar.py` ao abrir e ao fechar a sessão (`CLAUDE.md` §11.6). Sem remoto, rode `sincronizar.py --sem-push`.
-10. **Feche:** `py 40-operacao-rotinas/ferramentas/verificar-propagacao.py` em ✅. Depois, **o primeiro pedido real pelo roteador** — e registre no `STATUS.md` o que o repositório não soube responder. É assim que ele passa a ser seu.
+10. **Feche:** `python3 40-operacao-rotinas/ferramentas/verificar-propagacao.py` em ✅. Depois, **o primeiro pedido real pelo roteador** — e registre no `STATUS.md` o que o repositório não soube responder. É assim que ele passa a ser seu.
 
 ## 4. O que ficou de fora, de propósito
 

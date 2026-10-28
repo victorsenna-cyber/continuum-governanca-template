@@ -42,15 +42,15 @@ uma rodada que leu ~10 conversas inteiras pela 1ª vez derrubou a conexão do Wh
   - flag desconhecida para tudo antes de ler qualquer coisa (um --help ignorado virou rodada completa).
 
 Uso (de qualquer lugar):
-  py capturar.py                     captura o que é novo nas conversas do mapa e transcreve os áudios novos
-  py capturar.py --chat <chatId>     só esta conversa (é o que os scripts por conversa rodam)
-  py capturar.py --chat <chatId> --historico   histórico fundo desta conversa (até 2.000 mensagens)
-  py capturar.py --so "<Pasta>"      só as conversas desta pasta
-  py capturar.py --mapa              só atualiza o mapa pelas etiquetas, as pastas e os scripts
-  py capturar.py --listar            lista as conversas da sessão (id, tipo, nome)
-  py capturar.py --estrutura         só cria a estrutura OpenWA/ em todos os clientes
-  py capturar.py --sem-transcrever   baixa os áudios e deixa a transcrição para a próxima rodada
-  py capturar.py --desde AAAA-MM-DD  na 1ª captura de uma conversa, não volta antes desta data
+  python3 capturar.py                     captura o que é novo nas conversas do mapa e transcreve os áudios novos
+  python3 capturar.py --chat <chatId>     só esta conversa (é o que os scripts por conversa rodam)
+  python3 capturar.py --chat <chatId> --historico   histórico fundo desta conversa (até 2.000 mensagens)
+  python3 capturar.py --so "<Pasta>"      só as conversas desta pasta
+  python3 capturar.py --mapa              só atualiza o mapa pelas etiquetas, as pastas e os scripts
+  python3 capturar.py --listar            lista as conversas da sessão (id, tipo, nome)
+  python3 capturar.py --estrutura         só cria a estrutura OpenWA/ em todos os clientes
+  python3 capturar.py --sem-transcrever   baixa os áudios e deixa a transcrição para a próxima rodada
+  python3 capturar.py --desde AAAA-MM-DD  na 1ª captura de uma conversa, não volta antes desta data
   --modelo <nome>                    repassado ao transcrever-audio.py (padrão large-v3)
 
 Chaves (fora do repositório): o script usa `OPENWA_KEY` ou `<OpenWA>/data/.api-key` (admin); a
@@ -499,7 +499,7 @@ def novas(sessao, chat_id, est, desde, fundo=False):
         log(f"  ⚠️ {'1ª captura: só as últimas' if primeira else f'{LIMITE_ROTINA}+ mensagens desde o cursor, lidas as últimas'} "
             f"{LIMITE_ROTINA}; o que vem antes de "
             f"{datetime.fromtimestamp(ms[0]['timestamp'], BRT):%d/%m %H:%M} não foi lido. "
-            f"Para completar: py capturar.py --chat \"{chat_id}\" --historico")
+            f"Para completar: python3 capturar.py --chat \"{chat_id}\" --historico")
     if primeira and desde: corte = int(desde.timestamp()) - 1
     return [m for m in ms if m.get("timestamp") and not m.get("isStatusBroadcast")
             and (m["timestamp"] > corte or (m["timestamp"] == corte and m.get("id") not in vistos))]
@@ -617,7 +617,7 @@ def main(args):
     fundo, args = tirar(args, "--historico")
     # 🔴 nada desconhecido passa (um --help virou rodada completa e derrubou a conexão)
     if len(args) > 1 or (args and args[0] not in MODOS):
-        sys.exit(f"argumento desconhecido: {' '.join(args)}\nnada foi lido. Uso: py capturar.py --help")
+        sys.exit(f"argumento desconhecido: {' '.join(args)}\nnada foi lido. Uso: python3 capturar.py --help")
     if fundo and not chat:
         sys.exit("--historico só vale com --chat <chatId>: histórico fundo é uma conversa por vez.")
     desde = datetime.strptime(desde, "%Y-%m-%d").replace(tzinfo=BRT) if desde else None

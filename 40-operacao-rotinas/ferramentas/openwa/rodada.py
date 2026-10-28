@@ -15,7 +15,7 @@ sem tocar o WhatsApp), espera `--espaco` segundos e vai para a próxima. Nunca c
 `tarefas/log/CAPTURA-<data-hora>.md`.
 
 Uso (da raiz da Governança):
-  py 40-operacao-rotinas/ferramentas/openwa/rodada.py                    todas as conversas do mapa, 30 s entre elas
+  python3 40-operacao-rotinas/ferramentas/openwa/rodada.py                    todas as conversas do mapa, 30 s entre elas
   py ... rodada.py --espaco 60 --max 8                                    60 s de intervalo, no máximo 8 conversas
   py ... rodada.py --so "<Pasta 1>" --so "<Pasta 2>"               só as pastas citadas
   py ... rodada.py --lista 40-operacao-rotinas/ferramentas/openwa/rodada.json   só os chatIds do arquivo
@@ -57,7 +57,7 @@ def main(argv):
     so, argv = tirar(argv, "--so", True, varios=True)
     lista, argv = tirar(argv, "--lista", True)
     dry, argv = tirar(argv, "--dry-run")
-    if argv: sys.exit(f"argumento desconhecido: {' '.join(argv)} — nada foi lido. Uso: py rodada.py --help")
+    if argv: sys.exit(f"argumento desconhecido: {' '.join(argv)} — nada foi lido. Uso: python3 rodada.py --help")
     espaco = int(espaco or 30); maximo = int(maximo or 0); falhas_max = int(falhas_max or 2)
 
     mapa = json.load(io.open(MAPA, encoding="utf-8"))

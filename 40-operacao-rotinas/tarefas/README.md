@@ -33,8 +33,8 @@ classe_dado: I                # P público · I interno sem cliente · C cliente
 nivel_minimo: N2              # N0 script · N1 gratuito · N2 Haiku · N3 Sonnet · N4 Opus · N5 Fable
 escada: N2,N3                 # níveis permitidos, do piso para cima
 swarm: nao                    # sim = pode ir ao Ruflo como worker externo (N4)
-comando: py x.py              # só N0: o que rodar (cwd = raiz do repo)
-verificacao: py y.py          # opcional, N0: comando que prova o "pronto quando" (saída 0 = passou)
+comando: python3 x.py              # só N0: o que rodar (cwd = raiz do repo)
+verificacao: python3 y.py          # opcional, N0: comando que prova o "pronto quando" (saída 0 = passou)
 insumos: a.md; b.md           # caminhos exatos, separados por ;
 saida: caminho.md             # UM caminho
 alcada: nao envia; nao decide preco; nao escreve em DECISOES.md
@@ -75,9 +75,9 @@ agendada_para:                # ISO; vazio = já
 ## 5. Como rodar
 
 ```
-py 40-operacao-rotinas/ferramentas/despachar.py --dry-run     # lista, ordena, mostra orçamento, não executa
-py 40-operacao-rotinas/ferramentas/despachar.py               # uma rodada
-py 40-operacao-rotinas/ferramentas/despachar.py --so N0,N2    # só esses níveis
+python3 40-operacao-rotinas/ferramentas/despachar.py --dry-run     # lista, ordena, mostra orçamento, não executa
+python3 40-operacao-rotinas/ferramentas/despachar.py               # uma rodada
+python3 40-operacao-rotinas/ferramentas/despachar.py --so N0,N2    # só esses níveis
 ```
 
-O agendador do Windows (`continuum-despachante`) roda uma rodada por hora, na janela que você definir. A primeira do dia escreve o brief (task `brief-diario`, recorrente).
+O agendador do sistema roda uma rodada por hora — Windows: Agendador de Tarefas (`continuum-despachante`); macOS: LaunchAgent instalado por `ferramentas/macos/instalar-mac.sh`; Linux: cron —, na janela que você definir. A primeira do dia escreve o brief (task `brief-diario`, recorrente).

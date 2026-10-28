@@ -5,8 +5,8 @@ REGUA: so dado de classe P (publico) ou I (interno sem cliente) passa por aqui.
 Dado C (cliente) ou S (sensivel) NUNCA. O CLI recusa C e S (saida 2).
 
 Uso:
-  py n1_cliente.py --saude
-  py n1_cliente.py --classe P --perfil auto:continuum-rapido "pergunta"
+  python3 n1_cliente.py --saude
+  python3 n1_cliente.py --classe P --perfil auto:continuum-rapido "pergunta"
 """
 import argparse
 import json

@@ -1,6 +1,6 @@
 """Monta o site do painel Caixa a partir do código do artefato, sem tocar nele.
 
-    py montar.py
+    python3 montar.py
 
 - index.html  = casca.html com artefato/index.html dentro de #dash-root, byte a byte.
 - supabase/004-painel-dados.sql = a função public.painel_dados(), que devolve as oito consultas de

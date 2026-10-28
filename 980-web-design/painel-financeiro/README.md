@@ -46,7 +46,7 @@ O painel nasceu como um artefato do tipo Dashboard no claude.ai (**Finanças {{E
 
 **Regra de design:** o painel não leva headlines grandes (`h2.cx-title`) nas abas; só o rótulo pequeno de cada aba. Mesma regra no artefato e no site.
 
-**Artefato mudou?** Copiar de novo `files/index.html` e os `datasets/*` para `artefato/`, `py montar.py`, aplicar o SQL no Supabase, publicar.
+**Artefato mudou?** Copiar de novo `files/index.html` e os `datasets/*` para `artefato/`, `python3 montar.py`, aplicar o SQL no Supabase, publicar.
 
 ## Extrato, cartão e mês
 

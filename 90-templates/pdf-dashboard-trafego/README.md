@@ -21,7 +21,7 @@ Um PDF A4 deitado, de uma página só, com o resultado **fechado** de uma ou mai
    - `campanhas[]`: o Gerenciador de Anúncios na data de fechamento (gasto, conversas, impressões, alcance, visitas, seguidores; `null` vira "—"). CPM, custo, frequência e taxa **se calculam**, não se digitam. `nome` curto (*Campanha 1*), e o nome técnico fica no `LOG-DECISOES.md`.
    - `serie[]`: o acumulado por dia, de **gasto e conversas** (as leituras do `painel.json` do cliente servem; o último ponto é o fechamento).
    - `chips`, `periodo`, `verba`, `nota`, `arquivo` (`saida` é opcional: subpasta de destino).
-2. `py 90-templates/pdf-dashboard-trafego/gerar_dashboard.py "<caminho do .json>"` → `.html`, `.pdf` e `.png` (prévia) ao lado do JSON. Imprime pelo Chrome headless (`pdf-continuum-no-windows`: aqui o weasyprint não roda).
+2. `python3 90-templates/pdf-dashboard-trafego/gerar_dashboard.py "<caminho do .json>"` → `.html`, `.pdf` e `.png` (prévia) ao lado do JSON. Imprime pelo Chrome headless (`pdf-continuum-no-windows`: aqui o weasyprint não roda).
 3. **Abrir a prévia e olhar** antes de enviar: número cortado, texto quebrando, eixo.
 
 O visual mora em `estilo.css`. Mudou o estilo, muda aqui, nunca no HTML de um cliente.

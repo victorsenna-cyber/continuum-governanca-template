@@ -1,7 +1,7 @@
 """Painel de resultado: servidor local que grava os dados de cada cliente no repo.
 
-    pyw servir.py            # abre o painel (é o que o atalho da área de trabalho roda)
-    py servir.py --atalho    # cria o atalho "Painel de Resultado" na área de trabalho
+    python3 servir.py            # abre o painel (é o que o atalho da área de trabalho roda)
+    python3 servir.py --atalho    # cria o atalho "Painel de Resultado" na área de trabalho
 
 Os dados de cada cliente moram na pasta de tráfego dele: clientes/<Cliente>/NN - tráfego pago/painel.json
 (ou NN - mídia paga, conforme o nome da pasta).
@@ -526,11 +526,15 @@ class Painel(BaseHTTPRequestHandler):
 
 def abrir_janela():
     url = f"http://127.0.0.1:{PORTA}/"
-    for nav in (r"C:\Program Files\Google\Chrome\Application\chrome.exe",
-                r"C:\Program Files (x86)\Microsoft\Edge\Application\msedge.exe"):
-        if os.path.exists(nav):
-            subprocess.Popen([nav, f"--app={url}", "--window-size=1440,900"])
-            return
+    sys.path.insert(0, str(AQUI.parent))
+    try:
+        from navegador import chrome_path  # Windows, macOS e Linux
+        nav = chrome_path(obrigatorio=False)
+    except Exception:  # noqa: BLE001
+        nav = None
+    if nav:
+        subprocess.Popen([nav, f"--app={url}", "--window-size=1440,900"])
+        return
     import webbrowser
     webbrowser.open(url)
 
@@ -541,6 +545,10 @@ def porta_ocupada():
 
 
 def criar_atalho():
+    if os.name != "nt":
+        print("Atalho automático só no Windows. No macOS: Automator > Aplicativo > Executar Shell Script com "
+              f"cd \"{AQUI}\" && python3 servir.py  -- ou rode python3 servir.py e fixe a aba no Dock.")
+        return
     pyw = Path(sys.executable).with_name("pythonw.exe")
     ps = f"""
 $d = [Environment]::GetFolderPath('Desktop')

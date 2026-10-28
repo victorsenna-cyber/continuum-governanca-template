@@ -13,7 +13,7 @@
 1. Na conta, crie `branding/01 - identidade visual/` e `branding/02 - posicionamento/` (este com um `README.md` que aponta para `PILARES.md` e a narrativa da conta, sem copiar).
 2. Copie `KIT-DE-MARCA-modelo.md` como `KIT-DE-MARCA.md` e `kit-modelo.json` como `kit.json` para a pasta `01`.
 3. Preencha a leitura no `.md` e os valores no `.json`.
-4. Gere: `py 90-templates/kit-de-marca/gerar_kit.py "clientes/<cliente>/<pasta de design>/branding/01 - identidade visual/kit.json"`.
+4. Gere: `python3 90-templates/kit-de-marca/gerar_kit.py "clientes/<cliente>/<pasta de design>/branding/01 - identidade visual/kit.json"`.
 5. Olhe os PNG. **O gate se passa no PNG, nunca no código.**
 
 ## Contrato com o motor
